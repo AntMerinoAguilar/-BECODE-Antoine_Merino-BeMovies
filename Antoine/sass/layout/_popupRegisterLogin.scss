@@ -1,0 +1,166 @@
+// Popup pour le register & login
+
+.modalRegisterLogin {
+    background-color: #1b1b1b;
+    height: 610px;
+    max-width: 410px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 66px 61px;
+    z-index: 1000;
+    display: none;
+    box-shadow: rgba(209, 32, 32, 0.486) 0px 5px 15px; // Si tu kiffes pas on peut supp
+
+    .modalRegisterLogin__close {
+        position: absolute;
+        top: 11px;
+        left: 14px;
+        cursor: pointer;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            color: #FFFFFF;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    .modalRegisterLogin__header {
+        height: 54px;
+        border: 1px solid white;
+        border-radius: 8px;
+        padding: 10px 31px;
+        margin-bottom: 54px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        // Finir les btns rouge qui slide gauche - droite
+
+        /* .left,
+        .right {
+            width: 50%;
+        } */
+
+        .signup-part,
+        .login-part {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-family: Inria Sans;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28.78px;
+            letter-spacing: 0.03em;
+            text-align: center;
+        }
+
+        .login-part {
+            background-color: #CC0000;
+
+            &:hover {
+                background-color: #fd0000;
+            }
+        }
+
+        /* .signup-part {
+            background-color: #CC0000;
+
+            &:hover {
+                background-color: #fd0000;
+            }
+        } */
+    }
+
+    .modalRegisterLogin__content {
+        #username,
+        #password {
+            width: 100%;
+            height: 44px;
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 25px;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+            letter-spacing: 0.05em;
+            // faire des modifs détails
+
+            &::placeholder {
+                color: #000000;
+            }
+        }
+
+        #remember {
+            width: 18px;
+            height: 18px;
+            margin-bottom: 46px;
+            cursor: pointer;
+            // faire des modifs détails
+        }
+
+        label {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+            padding-left: 11px;
+            cursor: pointer;
+        }
+
+        .login-submit {
+            width: 100%;
+            height: 47px;
+            background-color: #CC0000;
+            border-radius: 8px;
+            padding: 11px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-family: Inria Sans;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 23.98px;
+            letter-spacing: 0.03em;
+            text-align: center;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #fd0000;
+            }
+        }
+
+        .forgot-pswd {
+            color: #CC0000;
+
+            &:hover {
+                color: #fd0000;
+            }
+        }
+
+        p {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+            margin-top: 19px;
+
+            span {
+                color: #CC0000;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fd0000;
+                }
+            }
+        }
+    }
+}

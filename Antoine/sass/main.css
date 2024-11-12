@@ -1,0 +1,684 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+/* Suppression des marges et des espacements par défaut */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajustement des éléments HTML de base */
+html, body {
+  height: 100%;
+  font-size: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Suppression des styles par défaut des listes */
+ul, ol {
+  list-style: none;
+}
+
+/* Suppression du soulignement par défaut des liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Réinitialisation des styles de table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Réinitialisation des boutons */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Assure que les images ne débordent pas de leur conteneur */
+img,
+video {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.overlay-modalRegisterLogin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.59);
+  z-index: 999;
+  display: none;
+}
+
+.overlay-modalMovie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.59);
+  z-index: 999;
+  display: none;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* @use "../utils/index4"; */
+header {
+  background-color: #141517;
+  height: 100px;
+  padding: 26px 0;
+  font-family: "Inria Sans";
+}
+header .title h2 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43.16px;
+  cursor: pointer;
+}
+header .title h2 .redBE {
+  color: red;
+}
+header .menu {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+header .menu a, header .menu button {
+  font-family: "Inria Sans";
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 3px 5px;
+}
+header .menu a:hover, header .menu button:hover {
+  background-color: #CC0000;
+  border-radius: 6px;
+}
+
+/* @use '../utils/mixins'; */
+footer {
+  background-color: #141517;
+  height: 186px;
+  padding: 71px 0;
+  font-family: "Inria Sans";
+}
+footer .title h2 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43.16px;
+}
+footer .title h2 .redBE {
+  color: red;
+}
+footer .menu {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+footer .menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 3px 5px;
+}
+footer .menu a:hover {
+  background-color: #CC0000;
+  border-radius: 6px;
+}
+footer .rights {
+  color: #B8B8B8;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16.79px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #191B20;
+}
+
+.search {
+  margin: 73px auto 61px;
+}
+.search .searchBar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 4px 8px 20px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.search .searchBar input {
+  flex: 1;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #000000;
+  padding: 13px;
+  outline: none;
+}
+.search .searchBar button {
+  background-color: rgba(204, 0, 0, 0.8705882353);
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45.3px;
+  width: 44px;
+}
+.search .searchBar button:hover {
+  background-color: #fd0000;
+}
+
+.resultMovies-container {
+  position: relative;
+  max-width: 1080px;
+  height: 380px;
+  margin: 0 auto 95px;
+  padding: 0 40px;
+  /* border: 1px solid greenyellow; //juste pour voir */
+}
+.resultMovies-container .resultMovies {
+  height: 100%;
+  overflow: hidden;
+  /* border: 1px solid blue; //juste pour voir */
+}
+.resultMovies-container .resultMovies p {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+}
+.resultMovies-container .resultMovies .swiper-container {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid red; //juste pour voir */
+}
+.resultMovies-container .resultMovies .swiper-container .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  /* border: 0.1px solid yellow; //juste pour voir */
+}
+.resultMovies-container .resultMovies .swiper-container .swiper-slide img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.resultMovies-container .resultMovies .swiper-container .swiper-button-prev {
+  left: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+.resultMovies-container .resultMovies .swiper-container .swiper-button-next {
+  right: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+
+.latestMovies-container {
+  position: relative;
+  max-width: 1080px;
+  height: 380px;
+  margin: 0 auto 95px;
+  padding: 0 40px;
+  /* border: 1px solid greenyellow; //juste pour voir */
+}
+.latestMovies-container .latestMovies {
+  height: 100%;
+  overflow: hidden;
+  /* border: 1px solid blue; //juste pour voir */
+}
+.latestMovies-container .latestMovies p {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+}
+.latestMovies-container .latestMovies .swiper-container {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid red; //juste pour voir */
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  /* border: 0.1px solid yellow; //juste pour voir */
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-button-prev {
+  left: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-button-next {
+  right: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+
+.genreMovies-container {
+  max-width: 1080px;
+  height: 520px;
+  margin: 0 auto 109px;
+  /* border: 1px solid greenyellow; //juste pour voir */
+}
+.genreMovies-container .genreMovies-top {
+  padding: 0 40px;
+  /* border: 1px solid red; //juste pour voir */
+}
+.genreMovies-container .genreMovies-top .genre-title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 39px;
+}
+.genreMovies-container .genreMovies-top .genre-buttons {
+  max-width: 588px;
+  margin: 0 auto 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.genreMovies-container .genreMovies-top .genre-buttons .btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  color: #FFFFFF;
+  padding: 7px;
+}
+.genreMovies-container .genreMovies-top .genre-buttons .btn:hover {
+  background-color: #CC0000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 8px;
+}
+.genreMovies-container .genreMovies-top hr {
+  max-width: 600px;
+  margin: 0 auto 29px;
+  color: #FFFFFF;
+}
+.genreMovies-container .genreMovies-bottom {
+  position: relative;
+  padding: 0 40px;
+  height: 380px;
+  /* border: 1px solid purple; //juste pour voir */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies {
+  height: 99%;
+  overflow: hidden;
+  /* border: 1px solid blue; //juste pour voir */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies p {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid red; //juste pour voir */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  /* border: 0.1px solid yellow; //juste pour voir */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-button-prev {
+  left: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-button-next {
+  right: -1px;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; */
+}
+
+.modalRegisterLogin {
+  background-color: #1b1b1b;
+  height: 610px;
+  max-width: 410px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 66px 61px;
+  z-index: 1000;
+  display: none;
+  box-shadow: rgba(209, 32, 32, 0.486) 0px 5px 15px;
+}
+.modalRegisterLogin .modalRegisterLogin__close {
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  cursor: pointer;
+}
+.modalRegisterLogin .modalRegisterLogin__close svg {
+  width: 16px;
+  height: 16px;
+  color: #FFFFFF;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.modalRegisterLogin .modalRegisterLogin__header {
+  height: 54px;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px 31px;
+  margin-bottom: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* .left,
+  .right {
+      width: 50%;
+  } */
+  /* .signup-part {
+      background-color: #CC0000;
+
+      &:hover {
+          background-color: #fd0000;
+      }
+  } */
+}
+.modalRegisterLogin .modalRegisterLogin__header .signup-part,
+.modalRegisterLogin .modalRegisterLogin__header .login-part {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-family: Inria Sans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.78px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.modalRegisterLogin .modalRegisterLogin__header .login-part {
+  background-color: #CC0000;
+}
+.modalRegisterLogin .modalRegisterLogin__header .login-part:hover {
+  background-color: #fd0000;
+}
+.modalRegisterLogin .modalRegisterLogin__content #username,
+.modalRegisterLogin .modalRegisterLogin__content #password {
+  width: 100%;
+  height: 44px;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-bottom: 25px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+.modalRegisterLogin .modalRegisterLogin__content #username::-moz-placeholder, .modalRegisterLogin .modalRegisterLogin__content #password::-moz-placeholder {
+  color: #000000;
+}
+.modalRegisterLogin .modalRegisterLogin__content #username::placeholder,
+.modalRegisterLogin .modalRegisterLogin__content #password::placeholder {
+  color: #000000;
+}
+.modalRegisterLogin .modalRegisterLogin__content #remember {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 46px;
+  cursor: pointer;
+}
+.modalRegisterLogin .modalRegisterLogin__content label {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  padding-left: 11px;
+  cursor: pointer;
+}
+.modalRegisterLogin .modalRegisterLogin__content .login-submit {
+  width: 100%;
+  height: 47px;
+  background-color: #CC0000;
+  border-radius: 8px;
+  padding: 11px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-family: Inria Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.98px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #FFFFFF;
+}
+.modalRegisterLogin .modalRegisterLogin__content .login-submit:hover {
+  background-color: #fd0000;
+}
+.modalRegisterLogin .modalRegisterLogin__content .forgot-pswd {
+  color: #CC0000;
+}
+.modalRegisterLogin .modalRegisterLogin__content .forgot-pswd:hover {
+  color: #fd0000;
+}
+.modalRegisterLogin .modalRegisterLogin__content p {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  margin-top: 19px;
+}
+.modalRegisterLogin .modalRegisterLogin__content p span {
+  color: #CC0000;
+  cursor: pointer;
+}
+.modalRegisterLogin .modalRegisterLogin__content p span:hover {
+  color: #fd0000;
+}
+
+.modalMovie {
+  background-color: #000000;
+  height: 526px;
+  max-width: 742px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 74px 79px;
+  z-index: 1000;
+  display: none;
+  box-shadow: rgba(129, 36, 36, 0.35) 0px 5px 15px;
+  /* overflow: auto; */
+}
+.modalMovie .modalMovie__close {
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  cursor: pointer;
+}
+.modalMovie .modalMovie__close svg {
+  width: 16px;
+  height: 16px;
+  color: #FFFFFF;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.modalMovie .modalMovie__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.modalMovie .modalMovie__content .modalMovie__content__image {
+  border: 1px solid #FFFFFF;
+  height: 350px;
+  max-width: 234px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top {
+  padding-bottom: 29px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .titleMovie {
+  text-transform: uppercase;
+  color: #CC0000;
+  font-family: Inria Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.98px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .yearMovie {
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding-bottom: 11px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .noteMovie {
+  padding-bottom: 12px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .noteMovie .noteMovie__star {
+  height: 21px;
+  width: 21px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .noteMovie .noteMovie__number {
+  color: #CC0000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+  text-align: center;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .genreMovie {
+  text-transform: uppercase;
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding-bottom: 13px;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__top .synopsis {
+  color: #FFFFFF;
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__bottom {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__bottom .castTitle {
+  text-transform: uppercase;
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+.modalMovie .modalMovie__content .modalMovie__content__info .modalMovie__content__info__bottom .castMovie {
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+/* Mixin pour le header et le footer */

@@ -1,0 +1,112 @@
+// 3eme swiper pour les genres de films
+
+// Faire des ajustements dans les height et width pour que les images/slides apparaissent proprement et pas croptés
+
+.genreMovies-container {
+    max-width: 1080px;
+    height: 520px;
+    margin: 0 auto 109px;
+    /* border: 1px solid greenyellow; //juste pour voir */
+
+    .genreMovies-top {
+        padding: 0 40px;
+        /* border: 1px solid red; //juste pour voir */
+
+        .genre-title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 39px;
+        }
+
+        .genre-buttons {
+            max-width: 588px;
+            margin: 0 auto 19px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .btn {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19.36px;
+                color: #FFFFFF;
+                padding: 7px;
+                
+
+                &:hover {
+                    background-color: #CC0000;
+                    box-shadow: 0px 4px 4px 0px #00000040;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        hr {
+            max-width: 600px;
+            margin: 0 auto 29px;
+            color: #FFFFFF;
+        }
+    }
+
+    .genreMovies-bottom {
+        position: relative;
+        padding: 0 40px;
+        height: 380px;
+        /* border: 1px solid purple; //juste pour voir */
+
+        .genreMovies {
+            height: 99%;
+            overflow: hidden;
+            /* border: 1px solid blue; //juste pour voir */
+
+            p {
+                color: #FFFFFF;
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19.36px;
+                text-align: left;
+            }
+
+            .swiper-container {
+                height: 100%;
+                width: 100%;
+                /* border: 1px solid red; //juste pour voir */
+
+                .swiper-slide {
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                    /* border: 0.1px solid yellow; //juste pour voir */
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+
+                .swiper-button-prev {
+                    left: -1px;
+                    /* position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer; */
+                }
+                
+                .swiper-button-next {
+                    right: -1px;
+                    /* position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer; */
+                }
+            }
+        }
+    }
+}

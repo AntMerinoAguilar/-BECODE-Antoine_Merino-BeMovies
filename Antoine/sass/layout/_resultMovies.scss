@@ -1,0 +1,65 @@
+// 1er swiper pour les résultats de recherche
+
+// Faire des ajustements dans les height et width pour que les images/slides apparaissent proprement et pas croptés
+
+.resultMovies-container {
+    position: relative;
+    max-width: 1080px;
+    height: 380px;
+    margin: 0 auto 95px;
+    padding: 0 40px;
+    /* border: 1px solid greenyellow; //juste pour voir */
+
+    .resultMovies {
+        height: 100%;
+        overflow: hidden;
+        /* border: 1px solid blue; //juste pour voir */
+
+        p {
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+        }
+
+        .swiper-container {
+            height: 100%;
+            width: 100%;
+            /* border: 1px solid red; //juste pour voir */
+
+            .swiper-slide {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+                /* border: 0.1px solid yellow; //juste pour voir */
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .swiper-button-prev {
+                left: -1px;
+                /* position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer; */
+            }
+            
+            .swiper-button-next {
+                right: -1px;
+                /* position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer; */
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// mixins réutilisables
+
+/* Mixin pour le header et le footer */
+@mixin header-footer($height: 80px, $padding: 20px) {
+    background-color: #141517;
+    height: $height;
+    padding: $padding;
+
+    .title h2 {
+        text-transform: uppercase;
+        color: white;
+        font-family: "Inria Sans";
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43.16px;
+        
+        .redBE {
+            color: red;
+        }
+    }
+
+    .menu a {
+        color: #FFFFFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: "Inria Sans";
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16.79px;
+        letter-spacing: 0.03em;
+        text-align: left;
+    }
+}
