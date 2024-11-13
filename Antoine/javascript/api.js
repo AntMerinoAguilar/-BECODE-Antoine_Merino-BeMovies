@@ -80,20 +80,6 @@ const getData=async()=>{
     }
 }
 
-getData().then(res => {
-    //liste derniers films
-    latestMovies = res["nowPlayingMovies"]["results"];
-    // liste des crédits des films
-    creditsForLatestMovies=res["creditsLatestMovies"];
-
-    //liste genre disponible
-    availableGenres = res["genreMovies"]["genres"];// les genres dispos
-
-    //liste films d'action (pour première catégorie)
-    actionMovies=res["actionMovies"]["results"];
-    creditsForActionMovies=res["creditsActionMovies"];
-});
-
 btnCloseModalMovie.onclick = function() {
     overlayModalMovie.style.display = "none";
     modalMovie.style.display = "none";
@@ -280,9 +266,22 @@ searchButton.addEventListener("click",async e=>{
     }
 });
 
-const main=async()=>{
-    await getData();
 
+const main=async()=>{
+    let obj=await getData();
+    //liste derniers films
+    latestMovies = obj["nowPlayingMovies"]["results"];
+    // liste des crédits des films
+    creditsForLatestMovies=obj["creditsLatestMovies"];
+
+    //liste genre disponible
+    availableGenres = obj["genreMovies"]["genres"];// les genres dispos
+
+    //liste films d'action (pour première catégorie)
+    actionMovies=obj["actionMovies"]["results"];
+    creditsForActionMovies=obj["creditsActionMovies"];
+
+    
     latestMovies.forEach(movie=> {
         swiperWrappers[1].appendChild(createMovie(movie,creditsForLatestMovies));
     });
@@ -293,4 +292,5 @@ const main=async()=>{
     })
     putAllAvailableGenres();
 }
+
 main();
