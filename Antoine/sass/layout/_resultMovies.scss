@@ -3,6 +3,7 @@
 // Faire des ajustements dans les height et width pour que les images/slides apparaissent proprement et pas croptés
 
 .resultMovies-container {
+    display: none;
     position: relative;
     max-width: 1080px;
     height: 380px;

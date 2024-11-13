@@ -209,6 +209,7 @@ body {
 }
 
 .resultMovies-container {
+  display: none;
   position: relative;
   max-width: 1080px;
   height: 380px;
@@ -348,10 +349,55 @@ body {
      object-fit: cover;
   cursor: pointer;
   /* border: 0.1px solid yellow; //juste pour voir */
+  /* code timmy */
 }
 .latestMovies-container .latestMovies .swiper-container .swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  transform: translateX(7.2%);
+  width: 234px;
+  height: 351px;
+  background: rgba(0, 0, 0, 0.9);
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage:hover {
+  opacity: 1;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 23px;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h1, .latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent img {
+  width: 35px;
+  height: 34px;
+  margin-bottom: 4px;
+}
+.latestMovies-container .latestMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  color: red;
 }
 .latestMovies-container .latestMovies .swiper-container .swiper-button-prev {
   left: -1px;
@@ -448,6 +494,51 @@ body {
 .genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  transform: translateX(7.2%);
+  width: 234px;
+  height: 351px;
+  background: rgba(0, 0, 0, 0.9);
+  /* code timmy */
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage:hover {
+  opacity: 1;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 23px;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h1, .genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent img {
+  width: 35px;
+  height: 34px;
+  margin-bottom: 4px;
+}
+.genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-slide .hoverImage .hoverImageContent h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  color: red;
 }
 .genreMovies-container .genreMovies-bottom .genreMovies .swiper-container .swiper-button-prev {
   left: -1px;
@@ -619,7 +710,7 @@ body {
   z-index: 1000;
   display: none;
   box-shadow: rgba(129, 36, 36, 0.35) 0px 5px 15px;
-  /* overflow: auto; */
+  overflow: auto;
 }
 .modalMovie .modalMovie__close {
   position: absolute;
@@ -728,4 +819,4 @@ body {
   text-align: left;
 }
 
-/* Mixin pour le header et le footer */
+/* Mixin pour le header et le footer *//*# sourceMappingURL=main.css.map */

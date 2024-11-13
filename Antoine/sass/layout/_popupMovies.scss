@@ -12,7 +12,7 @@
     z-index: 1000;
     display: none;
     box-shadow: rgba(129, 36, 36, 0.35) 0px 5px 15px; // Si tu kiffes pas on peut supp
-    /* overflow: auto; */ //si on veut scroller si le contenu est trop grand
+    overflow: auto;//si on veut scroller si le contenu est trop grand
 
     .modalMovie__close {
         position: absolute;
