@@ -1,0 +1,47 @@
+// En-tête
+
+/* @use "../utils/index4"; */
+
+header {
+    background-color: #141517;
+    height: 100px;
+    padding: 26px 0;
+    font-family: "Inria Sans";
+
+    .title h2 {
+        text-transform: uppercase;
+        color: white;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43.16px;
+        cursor: pointer;
+        
+        .redBE {
+            color: red;
+        }
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+
+        a {
+            font-family: "Inria Sans";
+            color: #FFFFFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16.79px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            padding: 3px 5px;
+
+            &:hover {
+                background-color: #CC0000;
+                border-radius: 6px;
+            }
+        }
+    } 
+}

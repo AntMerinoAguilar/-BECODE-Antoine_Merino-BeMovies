@@ -1,0 +1,293 @@
+// Popup pour le register & login
+
+.modalRegisterLogin {
+    background-color: #1b1b1b;
+    height: 610px;
+    max-width: 410px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 66px 61px;
+    z-index: 1000;
+    display: none;
+    box-shadow: rgba(209, 32, 32, 0.486) 0px 5px 15px;
+
+    .modalRegisterLogin__close {
+        position: absolute;
+        top: 11px;
+        left: 14px;
+        cursor: pointer;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            color: #FFFFFF;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    .modalRegisterLogin__header {
+        height: 54px;
+        border: 1px solid white;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 54px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        display: none;
+
+        &.hidden {
+            display: none;
+        }
+
+        &.visible {
+            display: block;
+        }
+
+        .switcher {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            height: 100%;
+
+            .switcher-slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: #CC0000;
+                transition: transform 0.3s ease;
+                z-index: 1;
+            }
+
+            .switcher-btn {
+                color: white;
+                text-transform: uppercase;
+                font-family: Inria Sans;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28.78px;
+                letter-spacing: 0.03em;
+                text-align: center;
+                flex: 1;
+                border: none; /* peut-être enlever */
+                background: transparent; /* peut-être enlever */
+                z-index: 2;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    }
+
+    .modalRegisterLogin__content {
+        .form-content {
+            display: none;
+
+            &.hidden {
+                display: none;
+            }
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        #form-signup {
+            #usernameRegistration {
+                margin-top: -10px;
+            }
+
+            #passwordConfirmation {
+                margin-bottom: 50px;
+            }
+
+            #registerButtonModal {
+                margin-bottom: 8px;
+            }
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        #form-login {
+            &.visible {
+                display: block;
+            }
+        }
+
+        #form-forgot-password {
+            .titlePassword {
+                color: white;
+                font-size: 30px;
+                text-align: center;
+                margin-top: 12px;
+                margin-bottom: 10px;
+                letter-spacing: 0.03em;
+            }
+
+            .rememberPassword {
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+                font-weight: 200;
+                text-align: center;
+                margin-bottom: 95px;
+                letter-spacing: 0.05em;
+
+                .spanPassword {
+                    color: #CC0000;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #fd0000;
+                    }
+                }
+            }
+
+            .paragPassword {
+                color: white;
+                text-align: center;
+                font-size: 15px;
+                font-weight: 200;
+                margin-bottom: 40px;
+                letter-spacing: 0.05em;
+            }
+
+            #emailForgot {
+                margin-bottom: 60px;
+            }
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        .input-modal {
+            width: 100%;
+            height: 44px;
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 25px;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+            letter-spacing: 0.05em;
+            // faire des modifs détails
+
+            &::placeholder {
+                color: #000000;
+            }
+        }
+
+        .custom-checkbox-container {
+            margin-bottom: 46px;
+
+            .checkbox-input {
+                display: none; // Masque le checkbox natif
+            }
+
+            label {
+                color: #FFFFFF;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19.36px;
+                cursor: pointer;
+                position: relative;
+                top: -3.2px;
+
+                .checkbox-style {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 4px;
+                    background-color: #fff;
+                    display: inline-block;
+                    position: relative;
+                    top: 3.2px;
+                    transition: all 0.2s ease;
+                    margin-right: 5px;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 8px;
+                        height: 8px;
+                        background-color: transparent; // Point invisible par défaut
+                        border-radius: 50%;
+                        transform: translate(-52.5%, -50%);
+                        transition: background-color 0.2s ease;
+                    }
+                }
+            }
+
+            .checkbox-input:checked + label .checkbox-style {
+                background-color: #CC0000;
+
+                &::after {
+                  background-color: #fff; // Point visible lorsqu'il est coché
+                }
+            }
+        }
+
+        .login-submit {
+            width: 100%;
+            height: 47px;
+            background-color: #CC0000;
+            border-radius: 8px;
+            padding: 11px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-family: Inria Sans;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 23.98px;
+            letter-spacing: 0.03em;
+            text-align: center;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #fd0000;
+            }
+        }
+
+        .forgot-pswd {
+            color: #CC0000;
+            cursor: pointer;
+
+            &:hover {
+                color: #fd0000;
+            }
+        }
+
+        p {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+            margin-top: 19px;
+
+            span {
+                color: #CC0000;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fd0000;
+                }
+            }
+        }
+    }
+}

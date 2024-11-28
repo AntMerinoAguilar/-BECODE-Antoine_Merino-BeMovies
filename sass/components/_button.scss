@@ -1,0 +1,29 @@
+// Style des boutons
+
+.menu {
+    button{
+        font-family: "Inria Sans";
+            color: #FFFFFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16.79px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            padding: 3px 5px;
+
+            &:hover {
+                background-color: #CC0000;
+                border-radius: 6px;
+            }
+    }
+}
+
+.active-btn {
+    background-color: #CC0000;
+
+    &:hover {
+        background-color: #fd0000;
+    }
+}

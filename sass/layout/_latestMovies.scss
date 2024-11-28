@@ -1,0 +1,131 @@
+// 2eme swiper pour les derniers films
+
+.latestMovies-container {
+    position: relative;
+    max-width: 1080px;
+    height: 380px;
+    margin: 0 auto 95px;
+    padding: 0 35px;
+    /* border: 1px solid greenyellow; //juste pour voir */
+
+    .latestMovies {
+        height: 100%;
+        overflow: hidden;
+        /* border: 1px solid blue; //juste pour voir */
+
+        p {
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            padding-left: 7px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.36px;
+            text-align: left;
+        }
+
+        .swiper-container {
+            height: 100%;
+            width: 100%;
+           /*  border: 1px solid red; //juste pour voir */
+
+            .swiper-slide {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* height: 100%; */
+                height: 92.3%;
+                object-fit: cover;
+                cursor: pointer;
+                /* border: 0.1px solid yellow; //juste pour voir */
+
+                img {
+                    object-fit: cover;
+                }
+
+                .hoverImage {
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateX(2.2%);
+                    width: 95.8%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.9);
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    .hoverImageContent{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        row-gap: 23px;
+                        width:100%;
+                        height:100%;
+                        color: white;
+                        padding: 0 24px;
+
+                        h1{
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 24.2px;
+                        }
+
+                        h2{
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 24.2px;
+                            color: #B0B0B0;
+                        }
+
+                        h3{
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 16.94px; 
+                        }
+
+                        svg{
+                            width: 35px;
+                            height: 34px;
+                            margin-bottom: 8px;
+                        }
+
+                        h4{
+                            font-size: 32px;
+                            font-weight: 700;
+                            line-height: 38.73px;
+                            color:#CC0000;
+                        }
+                    }
+                }
+            }
+
+            // Supprime les flèches par défaut
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                content: ''; // Supprime le contenu par défaut
+            }
+
+            .swiper-button-prev {
+                left: -1px;
+            }
+            
+            .swiper-button-next {
+                right: -1px;
+            }
+
+            i {
+                font-size: 25px;
+                color: #737373;
+                transition: color 0.2s ease;
+
+                &:hover {
+                color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

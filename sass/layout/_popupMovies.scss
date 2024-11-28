@@ -1,0 +1,139 @@
+// Popup pour les info des films
+
+.modalMovie {
+    background-color: #000000;
+    height: 526px;
+    max-width: 742px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 74px 79px;
+    z-index: 1000;
+    display: none;
+    box-shadow: rgba(129, 36, 36, 0.35) 0px 5px 15px; // Si tu kiffes pas on peut supp
+    overflow: auto;//si on veut scroller si le contenu est trop grand
+
+    .modalMovie__close {
+        position: absolute;
+        top: 11px;
+        left: 14px;
+        cursor: pointer;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            color: #FFFFFF;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    .modalMovie__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .modalMovie__content__image {
+            border: 1px solid #FFFFFF;
+            height: 350px;
+            max-width: 234px;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .modalMovie__content__info {
+            .modalMovie__content__info__top {
+                padding-bottom: 29px;
+
+                .titleMovie {
+                    text-transform: uppercase;
+                    color: #CC0000;
+                    font-family: Inria Sans;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 23.98px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                }
+
+                .yearMovie {
+                    color: #E9E9E9;
+                    font-family: Inria Sans;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16.79px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                    padding-bottom: 11px;
+                }
+
+                .noteMovie {
+                    padding-bottom: 12px;
+
+                    .noteMovie__star {
+                        height: 21px;
+                        width: 21px;
+                    }
+
+                    .noteMovie__number {
+                        color: #CC0000;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 24.2px;
+                        text-align: center;
+                    }
+                }
+
+                .genreMovie {
+                    text-transform: uppercase;
+                    color: #E9E9E9;
+                    font-family: Inria Sans;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16.79px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                    padding-bottom: 13px;
+                }
+
+                .synopsis {
+                    color: #FFFFFF;
+                    font-family: Inria Sans;
+                    font-size: 16px;
+                    font-weight: 200;
+                    line-height: 24px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                }
+            }
+
+            .modalMovie__content__info__bottom {
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+
+                .castTitle {
+                    text-transform: uppercase;
+                    color: #E9E9E9;
+                    font-family: Inria Sans;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16.79px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                }
+
+                .castMovie {
+                    color: #E9E9E9;
+                    font-family: Inria Sans;
+                    font-size: 14px;
+                    font-weight: 200;
+                    line-height: 16.79px;
+                    letter-spacing: 0.03em;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

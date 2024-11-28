@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeMovies</title>
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+
+    <div class="overlay-modalRegisterLogin"></div>
+    <div class="overlay-modalMovie"></div>
+
+
+    <section class="modalRegisterLogin">
+      <div class="modalRegisterLogin__close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="modalRegisterLogin__header">
+        <div class="switcher">
+          <div class="switcher-slider"></div>
+          <button type="button" id="signup-button" class="switcher-btn">Signup</button>
+          <button type="button" id="login-button" class="switcher-btn">Login</button>
+        </div>
+      </div>
+      <div class="modalRegisterLogin__content">
+        <div id="form-signup" class="form-content hidden">
+          <input type="text" name="username" id="usernameRegistration" class="input-modal" placeholder="Username">
+          <input type="email" name="email" id="emailRegistration" class="input-modal" placeholder="Email">
+          <input type="password" name="password" id="passwordRegistration" class="input-modal" placeholder="Password">
+          <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="input-modal" placeholder="Confirm Password">
+          <button type="submit" class="login-submit" id="registerButtonModal">Register</button>
+          <p>Already a member? <span class="modal-link" id="go-to-signin">Sign in</span></p>
+        </div>
+
+        <div id="form-login" class="form-content">
+          <input type="text" name="username" id="username" class="input-modal" placeholder="Username">
+          <input type="password" name="password" id="password" class="input-modal" placeholder="Password">
+          <div class="custom-checkbox-container">
+            <input type="checkbox" name="remember" id="remember" class="checkbox-input">
+            <label for="remember">
+              <span class="checkbox-style"></span>
+              Remember me
+            </label>
+          </div>
+          <button type="submit" class="login-submit">login</button>
+          <p class="forgot-pswd">I forgot my password</p>
+          <p>Not a member yer ? <span class="modal-link" id="go-to-signup">Sign up</span></p>
+        </div>
+
+        <div id="form-forgot-password" class="form-content">
+          <h2 class="titlePassword">Forgot password?</h2>
+          <h3 class="rememberPassword">Remember your password? <span class="spanPassword">Login here</span></h3>
+          <p class="paragPassword">We'll email you a link to reset your password.</p>
+          <input type="email" name="email" id="emailForgot" class="input-modal" placeholder="Email">
+          <button type="submit" class="login-submit">Reset password</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="modalMovie">
+      <div class="modalMovie__close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="modalMovie__content">
+        <div class="modalMovie__content__image">
+          <img class="imageModalMovie" src="" alt="image du film cliqué">
+        </div>
+        <div class="modalMovie__content__info">
+          <div class="modalMovie__content__info__top">
+            <h3 class="titleMovie"></h3>
+            <h5 class="yearMovie"></h5>
+            <div class="noteMovie">
+              <svg class="noteMovie__star" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.15593 1.01863C9.57965 -0.339543 11.42 -0.339543 11.8423 1.01863L13.3536 5.87324C13.4459 6.16889 13.6254 6.42651 13.8664 6.60925C14.1073 6.792 14.3975 6.89053 14.6953 6.89076H19.585C20.9536 6.89076 21.5214 8.71935 20.4155 9.55991L16.4608 12.5594C16.2193 12.7423 16.0395 13.0003 15.9472 13.2965C15.8548 13.5927 15.8547 13.9118 15.9467 14.2081L17.458 19.0627C17.8817 20.4209 16.3916 21.5519 15.2829 20.7114L11.3282 17.7119C11.087 17.529 10.7965 17.4306 10.4984 17.4306C10.2003 17.4306 9.90986 17.529 9.66863 17.7119L5.71393 20.7114C4.60661 21.5519 3.11795 20.4209 3.54026 19.0627L5.05152 14.2081C5.14357 13.9118 5.1434 13.5927 5.05105 13.2965C4.95869 13.0003 4.77888 12.7423 4.53741 12.5594L0.58412 9.56139C-0.521783 8.72083 0.0474111 6.89224 1.41461 6.89224H6.3029C6.60098 6.89232 6.89144 6.79393 7.13271 6.61116C7.37398 6.42839 7.55368 6.17061 7.64608 5.87471L9.15734 1.0201L9.15593 1.01863Z" fill="#CC0000"/>
+                </svg>
+              <span class="noteMovie__number"></span>
+            </div>
+            <h4 class="genreMovie"></h4>
+            <p class="synopsis"></p>
+          </div>
+          <div class="modalMovie__content__info__bottom">
+            <h4 class="castTitle">cast :</h4>
+            <p class="castMovie"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <header>
+      <section class="container">
+        <div class="title">
+          <a href="index.html"><h2 class="title-site"><span class="redBE">Be</span>Movies</h2></a>
+        </div>
+        <div class="menu">
+          <a href="#search">search</a>
+          <a href="#latestMovies-container">latest</a>
+          <a href="#genreMovies-container">genre</a>
+          <button type="button" class="popup register">register</button>
+          <button type="button" class="popup login">signin</button>
+        </div>
+      </section>
+    </header>
+
+
+    <section class="container">
+      <div class="search" id="search">
+        <form action="" class="searchBar">
+          <input
+            type="search"
+            name="searchMovie"
+            id="searchMovie"
+            placeholder="Enter a movie..."
+          />
+          <button class="searchButton" type="submit" title="btn-search">
+            <i class='bx bx-right-arrow-alt icon'></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+
+    <section class="resultMovies-container">
+      <div class="resultMovies">
+        <p class="wordSearched"></p>
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+          </div>
+          <div class="swiper-button-prev">
+            <i class='bx bx-left-arrow-circle'></i>
+          </div>
+          <div class="swiper-button-next">
+            <i class='bx bx-right-arrow-circle'></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="latestMovies-container" id="latestMovies-container">
+      <div class="latestMovies">
+        <p>Latest releases</p>
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+          </div>
+          <div class="swiper-button-prev">
+            <i class='bx bx-left-arrow-circle'></i>
+          </div>
+          <div class="swiper-button-next">
+            <i class='bx bx-right-arrow-circle'></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="genreMovies-container" id="genreMovies-container">
+      <div class="genreMovies-top">
+        <h3 class="genre-title">Movies by genre</h3>
+
+        <div class="genre-buttons">
+          <div class="swiper-container-genre-slider">
+            <div class="swiper-wrapper-genre-slider">
+              <!-- Les boutons pour les genres seront ajoutés ici dynamiquement -->
+            </div>
+            <!-- <div class="swiper-button-prev">
+              <i class='bx bx-left-arrow-circle'></i>
+            </div>
+            <div class="swiper-button-next">
+              <i class='bx bx-right-arrow-circle'></i>
+            </div> -->
+          </div>
+        </div>
+
+        <hr>
+      </div>
+
+      <div class="genreMovies-bottom">
+        <div class="genreMovies">
+          <p class="selected-genre">Action</p>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+            </div>
+            <div class="swiper-button-prev">
+              <i class='bx bx-left-arrow-circle'></i>
+            </div>
+            <div class="swiper-button-next">
+              <i class='bx bx-right-arrow-circle'></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <section class="container">
+        <div class="title">
+          <a href="index.html"><h2 class="title-site"><span class="redBE">Be</span>Movies</h2></a>
+        </div>
+        <div class="menu">
+          <a href="#search">search</a>
+          <a href="#latestMovies-container">latest</a>
+          <a href="#genreMovies-container">genre</a>
+          <button type="button" class="popup register">register</button>
+          <button type="button" class="popup login">signin</button>
+        </div>
+        <div class="rights">
+          <p>@2023 - All rights reserved</p>
+        </div>
+      </section>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="javascript/popupRegisterLogin.js"></script>
+    <script src="javascript/api.js"></script>
+    <script src="javascript/easterEgg.js"></script>
+  </body>
+</html>
