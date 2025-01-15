@@ -57,7 +57,7 @@ This exercise was carried out in **duo** with my partner, [**titruong99**](https
 - We also made use of **Postman** to test the API endpoints and ensure that the data from **TMDb** was correctly retrieved.
 
 For a similar implementation of the project, you can also check out my partner’s repository:  
-[**titruong99's BeMovies Repo**](https://github.com/titruong99/BeMovies-BeCode-Timmy).
+[**titruong99's BeMovies Repo**](https://github.com/titruong99/BeMoviesFinal-TimmyTRUONG).
 
 ## Installation and Usage 💻
 
